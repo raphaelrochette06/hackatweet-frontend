@@ -4,8 +4,11 @@ import { useState, useEffect } from "react";
 import Modal from "react-modal";
 import { login, logout } from "../reducers/user.js";
 import { useDispatch } from "react-redux";
+import { useRouter } from "next/router";
+import homePage from "./Home.js";
 
 function Login() {
+  const router = useRouter();
   const dispatch = useDispatch();
   const [modalSignInIsOpen, setSignInIsOpen] = useState(false);
   const [modalSignUpIsOpen, setSignUpIsOpen] = useState(false);
@@ -46,11 +49,13 @@ function Login() {
     })
       .then((response) => response.json())
       .then((data) => {
-        if (data.result) {
+        console.log(data);
+        if (data.result === true) {
           dispatch(login({ username: signUpUsername, token: data.token }));
           setSignUpFirstname("");
           setSignUpUsername("");
           setSignUpPassword("");
+          router.push("../pages/home.js");
         }
       });
   };
@@ -143,6 +148,7 @@ function Login() {
                         value={signUpPassword}
                       />
                     </div>
+
                     <button
                       onClick={() => handleRegister()}
                       className={styles.modalBtn}
