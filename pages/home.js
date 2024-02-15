@@ -1,11 +1,7 @@
-import Login from "../components/Login";
+import Home from "../components/Home";
 
 function HomePage() {
-  <div>
-    <div className={styles.homePage}>
-      <h1>Home</h1>
-    </div>
-  </div>;
+  return <Home />;
 }
 
 export default HomePage;

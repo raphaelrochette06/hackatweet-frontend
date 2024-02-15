@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Mont-Heavy";
+  src: url("../public/Mont-HeavyDEMO.otf") format("opentype");
+}
+
 .connection {
   background-image: url("../public/twitterImage.png");
   background-size: cover;
@@ -9,28 +14,48 @@
 }
 .logoTwitter {
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding-left: 60px;
+  width: 40%;
 }
 .connectionContainer {
   background-color: #161d28;
-  width: 800px;
+  width: 60%;
   padding-left: 30px;
+}
+.connectioncontent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 75%;
 }
 .logoTwitterMini {
   padding-bottom: 20px;
-  margin-top: 15px;
+  margin-top: 30px;
+}
+.titleConnection {
+  width: 450px;
 }
 .title {
-  font-size: 80px;
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 70px;
+  font-family: "Mont-Heavy";
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 .joinText {
   font-size: 30px;
+  font-family: "Mont-Heavy";
+  margin-top: 30px;
+}
+.btnAndText {
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .btnSignUp {
-  background-color: #3498db;
+  background-color: #378fee;
   color: white;
   padding: 10px 60px;
   border-radius: 20px;
@@ -44,6 +69,7 @@
   -o-border-radius: 20px;
   width: 200px;
   margin-top: 20px;
+  font-family: "Mont-Heavy";
 }
 
 .btnSignUp:hover {
@@ -53,7 +79,7 @@
 .btnSignIn {
   width: 200px;
   background-color: transparent;
-  color: white;
+  color: #378fee;
   padding: 10px 60px;
   border-radius: 20px;
   border: 1px solid gray;
@@ -68,19 +94,22 @@
   -moz-transition: background-color 0.3s ease;
   -ms-transition: background-color 0.3s ease;
   -o-transition: background-color 0.3s ease;
+  font-family: "Mont-Heavy";
 }
 
 .btnSignIn:hover {
   background-color: #2980b9;
 }
-.contentConnection {
+.contentTextConnection {
   display: flex;
   flex-direction: column;
 }
 .text {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  font-size: large;
+  font-family: "Mont-Heavy";
+}
+.CreateText {
+  font-size: 25px;
+  font-family: "Mont-Heavy";
 }
 .firstname {
   background-color: transparent;
@@ -89,8 +118,10 @@
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
-  border: solid 2px white;
+  border: solid 1px rgba(255, 255, 255, 0.5);
   color: white;
+  padding: 8px;
+  width: 225px;
 }
 .username {
   background-color: transparent;
@@ -99,8 +130,10 @@
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
-  border: solid 2px white;
+  border: solid 1px rgba(255, 255, 255, 0.5);
   color: white;
+  padding: 8px;
+  width: 225px;
 }
 .password {
   background-color: transparent;
@@ -109,68 +142,109 @@
   -moz-border-radius: 5px;
   -ms-border-radius: 5px;
   -o-border-radius: 5px;
-  border: solid 2px white;
+  border: solid 1px rgba(255, 255, 255, 0.5);
   color: white;
+  padding: 8px;
+  width: 225px;
 }
 .customStyles {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 350px;
+  height: 470px;
   width: 40%;
   background-color: #161d28;
   position: absolute;
   top: 50px;
   left: 30%;
+  right: 30%;
   border-radius: 10px;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
 }
+.customStylesIn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  width: 40%;
+  background-color: #161d28;
+  position: absolute;
+  top: 50px;
+  left: 30%;
+  right: 30%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
 .btnClose {
   display: flex;
   justify-content: flex-end;
   color: white;
   width: 100%;
+  padding: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .modalSignUp {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
+  height: 100%;
+  width: 100%;
+  margin: 0px;
 }
 .contentModal {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
+  height: 80%;
   color: whitesmoke;
+  margin: 0px;
 }
+
+.contentModalIn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 75%;
+  color: whitesmoke;
+  margin: 0px;
+}
+
 .signUpForm {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 120px;
+  height: 200px;
 }
 .signInForm {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
+  height: 150px;
 }
 .modalBtn {
-  width: 200px;
-  background-color: transparent;
-  color: white;
-  padding: 10px 60px;
+  background-color: white;
+  color: black;
+  font-family: "Mont-Heavy";
   border-radius: 20px;
   border: 1px solid gray;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 15px;
   transition: background-color 0.3s ease;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -180,9 +254,15 @@
   -moz-transition: background-color 0.3s ease;
   -ms-transition: background-color 0.3s ease;
   -o-transition: background-color 0.3s ease;
-  margin-top: 10px;
+  width: 225px;
+  height: 35px;
 }
 
 .modalBtn:hover {
-  background-color: #2980b9;
+  background-color: transparent;
+  color: white;
+}
+.ConnectText {
+  font-size: 25px;
+  font-family: "Mont-Heavy";
 }

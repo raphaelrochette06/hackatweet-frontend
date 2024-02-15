@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
 import homePage from "./Home.js";
 
+Modal.defaultStyles.overlay.backgroundColor = "rgba(0, 0, 0, 0.4)";
 function Login() {
   const router = useRouter();
   const dispatch = useDispatch();
@@ -30,7 +31,6 @@ function Login() {
 
   function openModalSignIn() {
     setSignInIsOpen(true);
-    // Ajoutez ici votre logique spécifique pour le formulaire de connexion
   }
 
   function closeModalSignIn() {
@@ -55,7 +55,7 @@ function Login() {
           setSignUpFirstname("");
           setSignUpUsername("");
           setSignUpPassword("");
-          router.push("../pages/home.js");
+          router.push("/home");
         }
       });
   };
@@ -76,6 +76,7 @@ function Login() {
           dispatch(login({ username: signInUsername, token: data.token }));
           setSignInUsername("");
           setSignInPassword("");
+          router.push("/home");
         }
       });
   };
@@ -87,118 +88,133 @@ function Login() {
           <Image
             src="/Logo_of_Twitter.svg.png"
             alt="logotwitter"
-            width={600}
-            height={314}
+            width={350}
+            height={300}
           />
         </div>
         <div className={styles.connectionContainer}>
-          <div className={styles.logoTwitterMini}>
-            <Image
-              src="/Logo_of_Twitter.svg.png"
-              alt="logotwitter"
-              width={100}
-              height={100}
-            />
-          </div>
-          <div className={styles.titleConnection}>
-            <h1 className={styles.title}>See what's happening</h1>
-            <div className={styles.contentConnection}>
+          <div className={styles.connectioncontent}>
+            <div className={styles.logoTwitterMini}>
+              <Image
+                src="/Logo_of_Twitter.svg.png"
+                alt="logotwitter"
+                width={50}
+                height={40}
+              />
+            </div>
+            <div className={styles.titleConnection}>
+              <h1 className={styles.title}>See what's happening</h1>
+            </div>
+            <div className={styles.contentTextConnection}>
               <h2 className={styles.joinText}> Join Hackatweet today.</h2>
-              <button onClick={openModalSignUp} className={styles.btnSignUp}>
-                {" "}
-                Sign up
-              </button>
-              <Modal
-                isOpen={modalSignUpIsOpen}
-                onRequestClose={closeModalSignUp}
-                className={styles.customStyles}
-                contentLabel="Sign Up Modal"
-              >
-                <div className={styles.modalSignUp}>
-                  <div className={styles.btnClose}>
-                    <button onClick={closeModalSignUp}>X</button>
-                  </div>
-                  <div className={styles.contentModal}>
-                    <Image
-                      src="/Logo_of_Twitter.svg.png"
-                      alt="logotwitter"
-                      width={50}
-                      height={50}
-                    />
-                    <h2> Create your Hackatweet account</h2>
-
-                    <div className={styles.signUpForm}>
-                      <input
-                        className={styles.firstname}
-                        placeholder="Firstname"
-                        onChange={(e) => setSignUpFirstname(e.target.value)}
-                        value={signUpFirstname}
-                      />
-                      <input
-                        className={styles.username}
-                        placeholder="Username"
-                        onChange={(e) => setSignUpUsername(e.target.value)}
-                        value={signUpUsername}
-                      />
-                      <input
-                        type="password"
-                        className={styles.password}
-                        placeholder="Password"
-                        onChange={(e) => setSignUpPassword(e.target.value)}
-                        value={signUpPassword}
-                      />
+              <div className={styles.btnAndText}>
+                <button onClick={openModalSignUp} className={styles.btnSignUp}>
+                  {" "}
+                  Sign up
+                </button>
+                <Modal
+                  isOpen={modalSignUpIsOpen}
+                  onRequestClose={closeModalSignUp}
+                  className={styles.customStyles}
+                  contentLabel="Sign Up Modal"
+                >
+                  <div className={styles.modalSignUp}>
+                    <div className={styles.btnClose}>
+                      <button onClick={closeModalSignUp}>X</button>
                     </div>
+                    <div className={styles.contentModal}>
+                      <Image
+                        src="/Logo_of_Twitter.svg.png"
+                        alt="logotwitter"
+                        width={50}
+                        height={40}
+                      />
+                      <h2 className={styles.CreateText}>
+                        {" "}
+                        Create your Hackatweet account
+                      </h2>
 
-                    <button
-                      onClick={() => handleRegister()}
-                      className={styles.modalBtn}
-                    >
-                      Sign Up
-                    </button>
-                  </div>
-                </div>
-              </Modal>
-              <p className={styles.text}> Already have an account?</p>
-              <button onClick={openModalSignIn} className={styles.btnSignIn}>
-                {" "}
-                Sign in
-              </button>
-              <Modal
-                isOpen={modalSignInIsOpen}
-                onRequestClose={closeModalSignIn}
-                className={styles.customStyles}
-                contentLabel="Sign In Modal"
-              >
-                <div className={styles.modalSignUp}>
-                  <div className={styles.btnClose}>
-                    <button onClick={closeModalSignIn}>X</button>
-                  </div>
-                  <div className={styles.contentModal}>
-                    <h2> Connect to Hackatweet</h2>
-                    <div className={styles.signInForm}>
-                      <input
-                        className={styles.username}
-                        placeholder="Username"
-                        onChange={(e) => setSignInUsername(e.target.value)}
-                        value={signInUsername}
-                      />
-                      <input
-                        type="password"
-                        className={styles.password}
-                        placeholder="Password"
-                        onChange={(e) => setSignInPassword(e.target.value)}
-                        value={signInPassword}
-                      />
+                      <div className={styles.signUpForm}>
+                        <input
+                          className={styles.firstname}
+                          placeholder="Firstname"
+                          onChange={(e) => setSignUpFirstname(e.target.value)}
+                          value={signUpFirstname}
+                        />
+                        <input
+                          className={styles.username}
+                          placeholder="Username"
+                          onChange={(e) => setSignUpUsername(e.target.value)}
+                          value={signUpUsername}
+                        />
+                        <input
+                          type="password"
+                          className={styles.password}
+                          placeholder="Password"
+                          onChange={(e) => setSignUpPassword(e.target.value)}
+                          value={signUpPassword}
+                        />{" "}
+                        <button
+                          onClick={() => handleRegister()}
+                          className={styles.modalBtn}
+                        >
+                          Sign Up
+                        </button>
+                      </div>
                     </div>
-                    <button
-                      onClick={() => handleConnection()}
-                      className={styles.modalBtn}
-                    >
-                      Sign In
-                    </button>
                   </div>
-                </div>
-              </Modal>
+                </Modal>
+                <p className={styles.text}> Already have an account?</p>
+                <button onClick={openModalSignIn} className={styles.btnSignIn}>
+                  {" "}
+                  Sign in
+                </button>
+                <Modal
+                  isOpen={modalSignInIsOpen}
+                  onRequestClose={closeModalSignIn}
+                  className={styles.customStylesIn}
+                  contentLabel="Sign In Modal"
+                >
+                  <div className={styles.modalSignUp}>
+                    <div className={styles.btnClose}>
+                      <button onClick={closeModalSignIn}>X</button>
+                    </div>
+                    <div className={styles.contentModalIn}>
+                      <Image
+                        src="/Logo_of_Twitter.svg.png"
+                        alt="logotwitter"
+                        width={50}
+                        height={40}
+                      />
+                      <h2 className={styles.ConnectText}>
+                        {" "}
+                        Connect to Hackatweet
+                      </h2>
+                      <div className={styles.signInForm}>
+                        <input
+                          className={styles.username}
+                          placeholder="Username"
+                          onChange={(e) => setSignInUsername(e.target.value)}
+                          value={signInUsername}
+                        />
+                        <input
+                          type="password"
+                          className={styles.password}
+                          placeholder="Password"
+                          onChange={(e) => setSignInPassword(e.target.value)}
+                          value={signInPassword}
+                        />
+                        <button
+                          onClick={() => handleConnection()}
+                          className={styles.modalBtn}
+                        >
+                          Sign In
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </Modal>
+              </div>
             </div>
           </div>
         </div>
