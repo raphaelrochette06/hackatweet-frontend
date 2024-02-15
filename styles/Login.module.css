@@ -1,87 +1,188 @@
 .connection {
-  background-image:url("../public/twitterImage.png") ;
-  background-size: cover; 
-  background-repeat: no-repeat; 
+  background-image: url("../public/twitterImage.png");
+  background-size: cover;
+  background-repeat: no-repeat;
   min-height: 100vh;
   display: flex;
-  justify-content:space-between;
-  color: white; 
+  justify-content: space-between;
+  color: white;
 }
 .logoTwitter {
-    display: flex;
-    align-items: center;
-    padding-left: 60px;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
 }
 .connectionContainer {
-    background-color: #161d28;
-    width: 800px;
-    padding-left: 30px;
+  background-color: #161d28;
+  width: 800px;
+  padding-left: 30px;
 }
 .logoTwitterMini {
-    padding-bottom: 20px;
-    margin-top: 15px;
+  padding-bottom: 20px;
+  margin-top: 15px;
 }
 .title {
-    font-size: 80px;
-    font-weight:bold;
-font-family:Arial, Helvetica, sans-serif
+  font-size: 80px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
 }
-.joinText{
-    font-size: 30px;
+.joinText {
+  font-size: 30px;
 }
 .btnSignUp {
-      background-color: #3498db;
-      color: white;
-      padding: 10px 60px;
-      border-radius: 20px;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background-color 0.3s ease;
-      -webkit-border-radius: 20px;
-      -moz-border-radius: 20px;
-      -ms-border-radius: 20px;
-      -o-border-radius: 20px;
-      width: 200px;
-      margin-top: 20px;
+  background-color: #3498db;
+  color: white;
+  padding: 10px 60px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  width: 200px;
+  margin-top: 20px;
 }
-      
-      .btnSignUp:hover {
-        background-color: #2980b9; 
-      }
 
-      .btnSignIn {
-        width: 200px;
-        background-color:transparent;
-        color: white;
-        padding: 10px 60px;
-        border-radius: 20px;
-        border:1px solid gray;
-        cursor: pointer;
-        font-size: 16px;
-        transition: background-color 0.3s ease;
-        -webkit-border-radius: 20px;
-        -moz-border-radius: 20px;
-        -ms-border-radius: 20px;
-        -o-border-radius: 20px;
-        -webkit-transition: background-color 0.3s ease;
-        -moz-transition: background-color 0.3s ease;
-        -ms-transition: background-color 0.3s ease;
-        -o-transition: background-color 0.3s ease;
+.btnSignUp:hover {
+  background-color: #2980b9;
 }
-        
-        .btnSignIn:hover {
-          background-color: #2980b9; 
-        }
-   .contentConnection {
-    display:flex;
-    flex-direction: column;
-    
-   }
-   .text {
-    padding-top: 8px;
-    padding-bottom: 8px;
-    font-size: large;
-   }
-   
 
+.btnSignIn {
+  width: 200px;
+  background-color: transparent;
+  color: white;
+  padding: 10px 60px;
+  border-radius: 20px;
+  border: 1px solid gray;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+}
+
+.btnSignIn:hover {
+  background-color: #2980b9;
+}
+.contentConnection {
+  display: flex;
+  flex-direction: column;
+}
+.text {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: large;
+}
+.firstname {
+  background-color: transparent;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border: solid 2px white;
+  color: white;
+}
+.username {
+  background-color: transparent;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border: solid 2px white;
+  color: white;
+}
+.password {
+  background-color: transparent;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border: solid 2px white;
+  color: white;
+}
+.customStyles {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  width: 40%;
+  background-color: #161d28;
+  position: absolute;
+  top: 50px;
+  left: 30%;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.btnClose {
+  display: flex;
+  justify-content: flex-end;
+  color: white;
+  width: 100%;
+}
+.modalSignUp {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.contentModal {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: whitesmoke;
+}
+.signUpForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 120px;
+}
+.signInForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+.modalBtn {
+  width: 200px;
+  background-color: transparent;
+  color: white;
+  padding: 10px 60px;
+  border-radius: 20px;
+  border: 1px solid gray;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.modalBtn:hover {
+  background-color: #2980b9;
+}
