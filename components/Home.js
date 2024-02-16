@@ -4,7 +4,7 @@ import Image from "next/image";
 import { login, logout } from "../reducers/user";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
-
+import { useState } from "react";
 function Home() {
   const router = useRouter();
   const dispatch = useDispatch();
@@ -13,6 +13,8 @@ function Home() {
     dispatch(logout());
     router.push("/");
   };
+
+  const [text, setText] = useState("");
 
   return (
     <div>
@@ -52,11 +54,19 @@ function Home() {
         <div className={styles.mainContent}>
           <div className={styles.inputContainer}>
             <h1 className={styles.title}>Home</h1>
+          </div>
+          <div>
             <input
+              onChange={(e) => setText(e.target.value)}
+              value={text}
               className={styles.tweetInput}
               placeholder="What's up?"
               maxLength={280}
             ></input>
+          </div>
+          <div className={styles.btnContent}>
+            <p>{text.length}/280</p>
+            <button className={styles.btnTweet}> Tweet </button>
           </div>
         </div>
         <div className={styles.trendContent}>
