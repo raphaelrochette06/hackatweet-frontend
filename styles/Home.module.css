@@ -1,6 +1,75 @@
 .homePage {
   background-color: #161d28;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
   display: flex;
-  width: 100%;
-  height: 100%;
+  justify-content: space-between;
+  color: white;
+}
+.sideHeader {
+  width: 25%;
+  border-right: rgba(255, 255, 255, 0.15) solid 1px;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+.mainContent {
+  width: 45%;
+  border-right: rgba(255, 255, 255, 0.15) solid 1px;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+.trendContent {
+  width: 30%;
+  padding: 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+}
+.profilePic {
+  border-radius: 100%;
+}
+
+.profilInfo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 90px;
+}
+
+.btnLogout {
+  background-color: transparent;
+  color: white;
+  padding: 06px 20px;
+  border-radius: 20px;
+  border: 1px solid gray;
+  cursor: pointer;
+  font-size: 10px;
+  transition: background-color 0.3s ease;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  font-family: "Mont-Heavy";
+}
+
+.title {
+  font-family: "Mont-Heavy";
+  font-size: 20px;
+}
+
+.logoTwitter {
+  cursor: pointer;
 }
