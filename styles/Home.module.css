@@ -50,7 +50,7 @@
 
 .profilInfo {
   display: flex;
-  height: 250px;
+  height: 150px;
   justify-content: center;
   align-items: center;
 }
@@ -59,7 +59,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  height: 15%;
+  height: 20%;
 }
 
 .btnLogout {

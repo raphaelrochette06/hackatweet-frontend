@@ -5,17 +5,39 @@ import { login, logout } from "../reducers/user";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import Tweet from "./Tweet";
+
 function Home() {
+  const [text, setText] = useState("");
   const router = useRouter();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.value);
+
   const handleLogout = () => {
     dispatch(logout());
     router.push("/");
   };
 
-  const [text, setText] = useState("");
-
+  const handleTweet = () => {
+    fetch("http://localhost3000/tweet/postTweet", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ content: text }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.result) {
+          dispatch(
+            postTweet({
+              firstname: data.firstname,
+              username: data.username,
+              content: text,
+            })
+          );
+          setText("");
+        }
+      });
+  };
   return (
     <div>
       <div className={styles.homePage}>
@@ -66,8 +88,12 @@ function Home() {
           </div>
           <div className={styles.btnContent}>
             <p>{text.length}/280</p>
-            <button className={styles.btnTweet}> Tweet </button>
+            <button className={styles.btnTweet} onClick={() => handleTweet()}>
+              {" "}
+              Tweet{" "}
+            </button>
           </div>
+          <Tweet />
         </div>
         <div className={styles.trendContent}>
           <h2 className={styles.title}>Trends</h2>
