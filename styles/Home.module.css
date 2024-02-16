@@ -84,3 +84,16 @@
 .logoTwitter {
   cursor: pointer;
 }
+.tweetInput {
+  width: 80%;
+  background-color: transparent;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border: solid 1px rgba(255, 255, 255, 0.5);
+  color: white;
+  height: 60px;
+  font-size: 20px;
+}

@@ -51,7 +51,14 @@ function Home() {
           </div>
         </div>
         <div className={styles.mainContent}>
-          <h1 className={styles.title}>Home</h1>
+          <div className={styles.inputContainer}>
+            <h1 className={styles.title}>Home</h1>
+            <input
+              className={styles.tweetInput}
+              placeholder="What's up?"
+              maxLength={280}
+            ></input>
+          </div>
         </div>
         <div className={styles.trendContent}>
           <h2 className={styles.title}>Trends</h2>
