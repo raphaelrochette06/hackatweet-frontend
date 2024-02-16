@@ -18,8 +18,10 @@ function Login() {
   const [signUpUsername, setSignUpUsername] = useState("");
   const [signUpPassword, setSignUpPassword] = useState("");
 
+  const [signInFirstname, setSignInFirstname] = useState("");
   const [signInUsername, setSignInUsername] = useState("");
   const [signInPassword, setSignInPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   function openModalSignUp() {
     setSignUpIsOpen(true);
@@ -51,7 +53,13 @@ function Login() {
       .then((data) => {
         console.log(data);
         if (data.result === true) {
-          dispatch(login({ username: signUpUsername, token: data.token }));
+          dispatch(
+            login({
+              firstname: signUpFirstname,
+              username: signUpUsername,
+              token: data.token,
+            })
+          );
           setSignUpFirstname("");
           setSignUpUsername("");
           setSignUpPassword("");
@@ -59,12 +67,12 @@ function Login() {
         }
       });
   };
-
   const handleConnection = () => {
     fetch("http://localhost:3000/users/signin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
+        firstname: signInFirstname,
         username: signInUsername,
         password: signInPassword,
       }),
@@ -72,11 +80,20 @@ function Login() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        if (data.result) {
-          dispatch(login({ username: signInUsername, token: data.token }));
+        if (data.result === true) {
+          dispatch(
+            login({
+              firstname: data.firstname,
+              username: signInUsername,
+              token: data.token,
+            })
+          );
+          setSignInFirstname("");
           setSignInUsername("");
           setSignInPassword("");
           router.push("/home");
+        } else {
+          setErrorMessage("User not found or wrong password");
         }
       });
   };
@@ -210,6 +227,9 @@ function Login() {
                         >
                           Sign In
                         </button>
+                        {errorMessage && (
+                          <p className={styles.errorMessage}>{errorMessage}</p>
+                        )}
                       </div>
                     </div>
                   </div>

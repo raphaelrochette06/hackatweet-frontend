@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "Mont-Heavy";
+  src: url("../public/Mont-HeavyDEMO.otf") format("opentype");
+}
+
 .homePage {
   background-color: #161d28;
   background-size: cover;
@@ -25,6 +30,12 @@
   justify-content: space-between;
   height: 100vh;
 }
+.textInfo {
+  font-family: "Mont-Heavy";
+}
+.textInfoUsername {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
 .trendContent {
   width: 30%;
   padding: 20px 20px;
@@ -42,7 +53,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  height: 90px;
+  height: 150px;
 }
 
 .btnLogout {

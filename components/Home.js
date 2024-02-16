@@ -2,8 +2,18 @@ import React from "react";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
 import { login, logout } from "../reducers/user";
+import { useDispatch, useSelector } from "react-redux";
+import { useRouter } from "next/router";
 
 function Home() {
+  const router = useRouter();
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.value);
+  const handleLogout = () => {
+    dispatch(logout());
+    router.push("/");
+  };
+
   return (
     <div>
       <div className={styles.homePage}>
@@ -15,17 +25,29 @@ function Home() {
               width={50}
               height={40}
               className={styles.logoTwitter}
+              href="/home"
             />
           </div>
-          <div className={styles.profilInfo}>
-            <Image
-              src="/Egg-Twitter.png"
-              alt="ProfilePictureTwitter"
-              width={40}
-              height={40}
-              className={styles.profilePic}
-            />
-            <button className={styles.btnLogout}>Logout</button>
+          <div className={styles.userInfo}>
+            <div className={styles.profilInfo}>
+              <Image
+                src="/Egg-Twitter.png"
+                alt="ProfilePictureTwitter"
+                width={40}
+                height={40}
+                className={styles.profilePic}
+              />
+              <div className={styles.userInfo}>
+                <p className={styles.textInfo}>{user.firstname}</p>
+                <p className={styles.textInfoUsername}>@{user.username}</p>
+              </div>
+              <button
+                className={styles.btnLogout}
+                onClick={() => handleLogout()}
+              >
+                Logout
+              </button>
+            </div>
           </div>
         </div>
         <div className={styles.mainContent}>
