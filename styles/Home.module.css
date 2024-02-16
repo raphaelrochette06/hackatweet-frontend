@@ -50,10 +50,16 @@
 
 .profilInfo {
   display: flex;
+  height: 250px;
+  justify-content: center;
+  align-items: center;
+}
+.userInfo {
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  height: 150px;
+  height: 15%;
 }
 
 .btnLogout {
@@ -74,6 +80,7 @@
   -ms-transition: background-color 0.3s ease;
   -o-transition: background-color 0.3s ease;
   font-family: "Mont-Heavy";
+  width: 25%;
 }
 
 .title {

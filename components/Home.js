@@ -30,24 +30,23 @@ function Home() {
           </div>
           <div className={styles.userInfo}>
             <div className={styles.profilInfo}>
-              <Image
-                src="/Egg-Twitter.png"
-                alt="ProfilePictureTwitter"
-                width={40}
-                height={40}
-                className={styles.profilePic}
-              />
+              <div className={styles.profilPicContainer}>
+                <Image
+                  src="/Egg-Twitter.png"
+                  alt="ProfilePictureTwitter"
+                  width={40}
+                  height={40}
+                  className={styles.profilePic}
+                />
+              </div>
               <div className={styles.userInfo}>
                 <p className={styles.textInfo}>{user.firstname}</p>
                 <p className={styles.textInfoUsername}>@{user.username}</p>
               </div>
-              <button
-                className={styles.btnLogout}
-                onClick={() => handleLogout()}
-              >
-                Logout
-              </button>
             </div>
+            <button className={styles.btnLogout} onClick={() => handleLogout()}>
+              Logout
+            </button>
           </div>
         </div>
         <div className={styles.mainContent}>
