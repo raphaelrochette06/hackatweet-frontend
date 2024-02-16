@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "../styles/Home.module.css";
 import Image from "next/image";
+import { login, logout } from "../reducers/user";
 
 function Home() {
   return (
@@ -31,7 +32,7 @@ function Home() {
           <h1 className={styles.title}>Home</h1>
         </div>
         <div className={styles.trendContent}>
-        <h2 className={styles.title}>Trends</h2>
+          <h2 className={styles.title}>Trends</h2>
         </div>
       </div>
     </div>
